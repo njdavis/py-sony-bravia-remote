@@ -75,6 +75,21 @@ class TV:
         data = response.json()
         return data['result'][0]['status'] == 'active'
 
+    def input(self):
+        self._send_irc_code('Input')
+        
+    def set_hdmi1(self):
+        self._send_irc_code('Hdmi1')
+        
+    def set_hdmi2(self):
+        self._send_irc_code('Hdmi2')
+        
+    def set_hdmi3(self):
+        self._send_irc_code('Hdmi3')
+        
+    def set_hdmi4(self):
+        self._send_irc_code('Hdmi4')
+        
     def mute(self):
         self._send_irc_code('Mute')
 
