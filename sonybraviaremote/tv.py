@@ -80,10 +80,10 @@ class TV:
 
         url = 'http://%s/sony/system' % self.config.host
         payload = {
-            'method': 'getPlayingContentInfo',
+            'method': 'getCurrentExternalInputsStatus',
             'params':[],
-            'id': 103,
-            'version':'1.0'
+            'id': 105,
+            'version':'1.1'
         }
 
         response = requests.post(url, data=json.dumps(payload))
