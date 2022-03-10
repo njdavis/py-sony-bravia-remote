@@ -89,7 +89,7 @@ class TV:
         response = requests.post(
             url,
             data=json.dumps(payload),
-            headers={'X-Auth-PSK', '0000' }
+            headers={'X-Auth-PSK':'0000' }
         )
 
         if response.status_code != 200:
