@@ -80,7 +80,7 @@ class TV:
 
         url = 'http://%s/sony/system' % self.config.host
         payload = {
-            'method': 'getInput',
+            'method': 'getPlayingContentInfo',
             'params':[],
             'id': 10,
             'version':'1.0'
