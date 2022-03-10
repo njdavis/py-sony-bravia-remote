@@ -89,7 +89,7 @@ class TV:
         response = requests.post(url, data=json.dumps(payload))
 
         if response.status_code != 200:
-            raise RuntimeError(response.body)
+            raise RuntimeError(response)
 
         data = response.json()
         inputs = data
