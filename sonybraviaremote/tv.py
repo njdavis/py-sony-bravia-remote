@@ -94,9 +94,9 @@ class TV:
 
         if response.status_code != 200:
             raise RuntimeError(response)
-
+            
         data = response.json()
-        inputs = data
+        return data
 
     def input(self):
         self._send_irc_code('Input')
