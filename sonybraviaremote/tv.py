@@ -86,7 +86,11 @@ class TV:
             'version':'1.0'
         }
 
-        response = requests.post(url, data=json.dumps(payload))
+        response = requests.post(
+            url,
+            data=json.dumps(payload),
+            headers={'X-Auth-PSK', '0000' }
+        )
 
         if response.status_code != 200:
             raise RuntimeError(response)
