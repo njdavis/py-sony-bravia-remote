@@ -94,7 +94,18 @@ class TV:
         data = response.json()
         inputs = data['result'][0]
         
-        return inputs[1]
+        if inputs[0]['status'] == 'true':
+            return inputs[0]['title']
+        elif inputs[1]['status'] == 'true':
+            return inputs[1]['title']
+        elif inputs[2]['status'] == 'true':
+            return inputs[2]['title']
+        elif inputs[3]['status'] == 'true':
+            return inputs[3]['title']
+        if inputs[4]['status'] == 'true':
+            return inputs[4]['title']
+        else:
+            return 'No Input Selected'
 
     def input(self):
         self._send_irc_code('Input')
