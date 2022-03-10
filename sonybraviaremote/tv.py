@@ -74,6 +74,25 @@ class TV:
 
         data = response.json()
         return data['result'][0]['status'] == 'active'
+    
+    def get_input(self):
+        """Gets whether the current input."""
+
+        url = 'http://%s/sony/system' % self.config.host
+        payload = {
+            'method': 'getInput',
+            'params':[],
+            'id': 10,
+            'version':'1.0'
+        }
+
+        response = requests.post(url, data=json.dumps(payload))
+
+        if response.status_code != 200:
+            raise RuntimeError(response.body)
+
+        data = response.json()
+        return data['result']
 
     def input(self):
         self._send_irc_code('Input')
