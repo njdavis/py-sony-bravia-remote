@@ -78,12 +78,12 @@ class TV:
     def get_input(self):
         """Gets whether the current input."""
 
-        url = 'http://%s/sony/system' % self.config.host
+        url = 'http://%s/sony/avContent' % self.config.host
         payload = {
-            'method': 'getCurrentExternalInputsStatus',
+            'method': 'getPlayingContentInfo',
             'params':[],
-            'id': 105,
-            'version':'1.1'
+            'id': 103,
+            'version':'1.0'
         }
 
         response = requests.post(url, data=json.dumps(payload))
