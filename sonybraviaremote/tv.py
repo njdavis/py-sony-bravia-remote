@@ -92,7 +92,9 @@ class TV:
             raise RuntimeError(response.body)
 
         data = response.json()
-        return data['result'][0]
+        inputs = data['result'][0]
+        
+        return inputs[1]
 
     def input(self):
         self._send_irc_code('Input')
