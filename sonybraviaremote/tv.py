@@ -82,7 +82,7 @@ class TV:
         payload = {
             'method': 'getPlayingContentInfo',
             'params':[],
-            'id': 103,
+            'id': 10,
             'version':'1.0'
         }
 
